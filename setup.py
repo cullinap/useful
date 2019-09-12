@@ -2,9 +2,9 @@
 from setuptools import setup, find_packages
 
 setup(
-    name='decodem_stats',
+    name='useful-stuff',
     version='0.0.6',
-    author='Decode_M Data Science',
+    author='patrick',
     classifiers=[
         'Programming Language :: Python :: 3',
         'Programming Language :: Python :: 3.7',
