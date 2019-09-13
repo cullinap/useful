@@ -35,7 +35,7 @@ def data_info(df: pd.DataFrame, target_variable: None):
 	print(FAT_BAR)
 
 	if target_variable != None:
-		top_corr = pd.DataFrame(np.abs(df[numeric_columns].iloc[:,1:].corr().loc[:,target_variable]
+		top_corr = pd.DataFrame(np.abs(df[numeric_columns].iloc[:,0:].corr().loc[:,target_variable]
 	                ).sort_values(
 	            ascending=False
 	        ))
