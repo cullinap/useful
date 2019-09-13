@@ -7,7 +7,7 @@ from IPython.display import display, HTML
 FAT_BAR = '='*50
 
 
-def eda(df: pd.DataFrame, target_variable: None):
+def data_info(df: pd.DataFrame, target_variable: None):
 
 	'''quick way of getting a snapshot of the data'''
 
