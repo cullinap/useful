@@ -54,12 +54,28 @@ def data_info(df: pd.DataFrame, target_variable: None):
 		pass
 
 
-def numeric_feature_corr(df):
+def numeric_feature_corr(df, plot='pairplot', figsize=(15,10)):
 
 	numeric_columns = df.select_dtypes(['int64', 'float64']).columns
 	numeric_df = df.loc[:, [col for col in numeric_columns]]
 
-	sns.pairplot(numeric_df)
 
-	plt.title('Numeric Feature Correlation')
-	plt.show()
+	if plot == 'pairplot':
+
+		sns.pairplot(numeric_df)
+
+		plt.title('Numeric Feature Correlation')
+		plt.show()
+
+	elif plot == 'heatmap':
+		fig, ax = plt.subplots(figsize=(figsize))
+
+		corr = numeric_df.corr()
+
+		sns.heatmap(corr)
+
+		plt.show()
+
+		plt.title('Numeric Feature Correlation')
+		plt.show()
+
