@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='useful_stuff',
-    version='0.0.6',
+    version='0.0.7',
     author='patrick',
     classifiers=[
         'Programming Language :: Python :: 3',
