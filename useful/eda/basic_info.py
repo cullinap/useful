@@ -77,5 +77,7 @@ def numeric_feature_corr(df, plot='pairplot', figsize=(15,10)):
 		plt.show()
 
 		plt.title('Numeric Feature Correlation')
-		plt.show()
+
+	else:
+		pass
 
