@@ -81,3 +81,22 @@ def numeric_feature_corr(df, plot='pairplot', figsize=(15,10)):
 	else:
 		pass
 
+
+def non_numeric_feature_corr(df):
+
+	non_numeric_columns = df.select_dtypes(['object']).columns
+
+	for i, column in enumerate(non_numeric_columns):
+	    plt.subplot(11,4,i+1)
+	    sns.barplot(
+	            x=df.groupby(column)['saleprice'].mean().index,
+	            y=df.groupby(column)['saleprice'].mean()
+	    )
+	    
+	    #plt.title("Average saleprice wrt. {}".format(column)),
+	    #plt.ylabel("Average sale price")
+	    plt.xticks(rotation=45)
+
+	plt.tight_layout()
+	plt.show()
+
