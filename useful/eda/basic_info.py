@@ -74,9 +74,9 @@ def numeric_feature_corr(df, plot='pairplot', figsize=(15,10)):
 
 		sns.heatmap(corr)
 
+		plt.title('Numeric Feature Correlation')
 		plt.show()
 
-		plt.title('Numeric Feature Correlation')
 
 	else:
 		pass
