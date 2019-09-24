@@ -65,7 +65,7 @@ def numeric_feature_corr(df, target_variable='target_variable', plot='pairplot',
 
     if plot == 'pairplot':
 
-        sns.pairplot(df.top_corr_features)
+        sns.pairplot(df[top_corr_features], kind='reg')
 
         plt.title('Numeric Feature Correlation')
         plt.show()
