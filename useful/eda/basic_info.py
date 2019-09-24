@@ -59,10 +59,13 @@ def numeric_feature_corr(df, target_variable='target_variable', plot='pairplot',
     numeric_columns = df.select_dtypes(['int64', 'float64']).columns
     numeric_df = df.loc[:, [col for col in numeric_columns]]
 
+    corr = numeric_df.corr()
+    top_corr_features = corr.index[abs(corr[target_variable])>=corr_cutoff]
+
 
     if plot == 'pairplot':
 
-        sns.pairplot(numeric_df)
+        sns.pairplot(df.top_corr_features)
 
         plt.title('Numeric Feature Correlation')
         plt.show()
@@ -70,8 +73,7 @@ def numeric_feature_corr(df, target_variable='target_variable', plot='pairplot',
     elif plot == 'heatmap':
         fig, ax = plt.subplots(figsize=(figsize))
 
-        corr = numeric_df.corr()
-        top_corr_features = corr.index[abs(corr[target_variable])>=corr_cutoff]
+        
 
         sns.heatmap(df[top_corr_features].corr(),cmap='coolwarm',annot=True)
 
