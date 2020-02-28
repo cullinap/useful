@@ -76,7 +76,7 @@ Now build the dockerfile.
 docker build -t hello-world -f Dockerfile .
 ```
 
-### Comamands
+### Commands
 
 Shows all the images that you have.
 
@@ -112,7 +112,7 @@ Enter bash shell in docker
 docker run -it <tag-name> /bin/bash
 ```
 
-You can enter python from the bash shell by typing in `python`
+You can enter python from the bash shell by typing in `python` and exit python by typing `exit`
 
 
 
